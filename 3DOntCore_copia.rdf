@@ -1,0 +1,2333 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://3DOntCore/"
+     xml:base="http://3DOntCore/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://3DOntCore">
+        <owl:versionIRI rdf:resource="http://3DOntCore/1.0.0"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://3DOntCore#Constitutes -->
+
+    <owl:ObjectProperty rdf:about="http://3DOntCore#Constitutes">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://3DOntCore#Is_constituted_by"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Point"/>
+        <rdfs:range rdf:resource="http://3DOntCore#Macro_Entity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://3DOntCore#Contains_data_relative_to -->
+
+    <owl:ObjectProperty rdf:about="http://3DOntCore#Contains_data_relative_to">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://3DOntCore#Is_described_by"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Data_Import"/>
+        <rdfs:range rdf:resource="http://3DOntCore#3D_Entity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://3DOntCore#Contains_dynamic_aggregated_data_relative_to -->
+
+    <owl:ObjectProperty rdf:about="http://3DOntCore#Contains_dynamic_aggregated_data_relative_to">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#Contains_dynamic_data_relative_to"/>
+        <owl:inverseOf rdf:resource="http://3DOntCore#Is_dynamically_aggregatively_described_by"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Dynamic_Import"/>
+        <rdfs:range rdf:resource="http://3DOntCore#3D_Entity"/>
+        <rdfs:comment>Original = The data, with this value, was originally contained in the data import and originally attributed to the concerned object
+
+Aggregated = The data is the output of some sort of aggregating calculus, different values were originally attributed to points or parts in the data import
+
+Disaggregated = The data, with this value, was originally contained in the data import and attributed to a mereologically superior object, then attributed by cloning diffusion to its parts or its points</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://3DOntCore#Contains_dynamic_data_relative_to -->
+
+    <owl:ObjectProperty rdf:about="http://3DOntCore#Contains_dynamic_data_relative_to">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#Contains_data_relative_to"/>
+        <owl:inverseOf rdf:resource="http://3DOntCore#Is_dynamically_described_by"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Dynamic_Import"/>
+        <rdfs:range rdf:resource="http://3DOntCore#3D_Entity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://3DOntCore#Contains_dynamic_disaggregated_data_relative_to -->
+
+    <owl:ObjectProperty rdf:about="http://3DOntCore#Contains_dynamic_disaggregated_data_relative_to">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#Contains_dynamic_data_relative_to"/>
+        <owl:inverseOf rdf:resource="http://3DOntCore#Is_dynamically_disaggregatively_described_by"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Dynamic_Import"/>
+        <rdfs:range rdf:resource="http://3DOntCore#3D_Entity"/>
+        <rdfs:comment>Original = The data, with this value, was originally contained in the data import and originally attributed to the concerned object
+
+Aggregated = The data is the output of some sort of aggregating calculus, different values were originally attributed to points or parts in the data import
+
+Disaggregated = The data, with this value, was originally contained in the data import and attributed to a mereologically superior object, then attributed by cloning diffusion to its parts or its points</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://3DOntCore#Contains_dynamic_original_data_relative_to -->
+
+    <owl:ObjectProperty rdf:about="http://3DOntCore#Contains_dynamic_original_data_relative_to">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#Contains_dynamic_data_relative_to"/>
+        <owl:inverseOf rdf:resource="http://3DOntCore#Is_dynamically_originally_described_by"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Dynamic_Import"/>
+        <rdfs:range rdf:resource="http://3DOntCore#3D_Entity"/>
+        <rdfs:comment>Original = The data, with this value, was originally contained in the data import and originally attributed to the concerned object
+
+Aggregated = The data is the output of some sort of aggregating calculus, different values were originally attributed to points or parts in the data import
+
+Disaggregated = The data, with this value, was originally contained in the data import and attributed to a mereologically superior object, then attributed by cloning diffusion to its parts or its points</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://3DOntCore#Contains_static_aggregated_data_relative_to -->
+
+    <owl:ObjectProperty rdf:about="http://3DOntCore#Contains_static_aggregated_data_relative_to">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#Contains_static_data_relative_to"/>
+        <owl:inverseOf rdf:resource="http://3DOntCore#Is_statically_aggregatively_described_by"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Static_Import"/>
+        <rdfs:range rdf:resource="http://3DOntCore#3D_Entity"/>
+        <rdfs:comment>Original = The data, with this value, was originally contained in the data import and originally attributed to the concerned object
+
+Aggregated = The data is the output of some sort of aggregating calculus, different values were originally attributed to points or parts in the data import
+
+Disaggregated = The data, with this value, was originally contained in the data import and attributed to a mereologically superior object, then attributed by cloning diffusion to its parts or its points</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://3DOntCore#Contains_static_data_relative_to -->
+
+    <owl:ObjectProperty rdf:about="http://3DOntCore#Contains_static_data_relative_to">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#Contains_data_relative_to"/>
+        <owl:inverseOf rdf:resource="http://3DOntCore#Is_statically_described_by"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Static_Import"/>
+        <rdfs:range rdf:resource="http://3DOntCore#3D_Entity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://3DOntCore#Contains_static_disaggregated_data_relative_to -->
+
+    <owl:ObjectProperty rdf:about="http://3DOntCore#Contains_static_disaggregated_data_relative_to">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#Contains_static_data_relative_to"/>
+        <owl:inverseOf rdf:resource="http://3DOntCore#Is_statically_disaggregatively_described_by"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Static_Import"/>
+        <rdfs:range rdf:resource="http://3DOntCore#3D_Entity"/>
+        <rdfs:comment>Original = The data, with this value, was originally contained in the data import and originally attributed to the concerned object
+
+Aggregated = The data is the output of some sort of aggregating calculus, different values were originally attributed to points or parts in the data import
+
+Disaggregated = The data, with this value, was originally contained in the data import and attributed to a mereologically superior object, then attributed by cloning diffusion to its parts or its points</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://3DOntCore#Contains_static_original_data_relative_to -->
+
+    <owl:ObjectProperty rdf:about="http://3DOntCore#Contains_static_original_data_relative_to">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#Contains_static_data_relative_to"/>
+        <owl:inverseOf rdf:resource="http://3DOntCore#Is_statically_originally_described_by"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Static_Import"/>
+        <rdfs:range rdf:resource="http://3DOntCore#3D_Entity"/>
+        <rdfs:comment>Original = The data, with this value, was originally contained in the data import and originally attributed to the concerned object
+
+Aggregated = The data is the output of some sort of aggregating calculus, different values were originally attributed to points or parts in the data import
+
+Disaggregated = The data, with this value, was originally contained in the data import and attributed to a mereologically superior object, then attributed by cloning diffusion to its parts or its points</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://3DOntCore#Has_as_part -->
+
+    <owl:ObjectProperty rdf:about="http://3DOntCore#Has_as_part">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://3DOntCore#Is_part_of"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Macro_Entity"/>
+        <rdfs:range rdf:resource="http://3DOntCore#Macro_Entity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://3DOntCore#Is_a_macro_entity_made_of -->
+
+    <owl:ObjectProperty rdf:about="http://3DOntCore#Is_a_macro_entity_made_of">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Data_Import"/>
+        <rdfs:range rdf:resource="http://3DOntCore#Material"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://3DOntCore#Is_a_point_made_of -->
+
+    <owl:ObjectProperty rdf:about="http://3DOntCore#Is_a_point_made_of">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Data_Import"/>
+        <rdfs:range rdf:resource="http://3DOntCore#Material"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://3DOntCore#Is_constituted_by -->
+
+    <owl:ObjectProperty rdf:about="http://3DOntCore#Is_constituted_by">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Macro_Entity"/>
+        <rdfs:range rdf:resource="http://3DOntCore#Point"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://3DOntCore#Is_described_by -->
+
+    <owl:ObjectProperty rdf:about="http://3DOntCore#Is_described_by">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://3DOntCore#Is_dynamically_aggregatively_described_by -->
+
+    <owl:ObjectProperty rdf:about="http://3DOntCore#Is_dynamically_aggregatively_described_by">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#Is_dynamically_described_by"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:comment>Original = The data, with this value, was originally contained in the data import and originally attributed to the concerned object
+
+Aggregated = The data is the output of some sort of aggregating calculus, different values were originally attributed to points or parts in the data import
+
+Disaggregated = The data, with this value, was originally contained in the data import and attributed to a mereologically superior object, then attributed by cloning diffusion to its parts or its points</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://3DOntCore#Is_dynamically_described_by -->
+
+    <owl:ObjectProperty rdf:about="http://3DOntCore#Is_dynamically_described_by">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#Is_described_by"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://3DOntCore#Is_dynamically_disaggregatively_described_by -->
+
+    <owl:ObjectProperty rdf:about="http://3DOntCore#Is_dynamically_disaggregatively_described_by">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#Is_dynamically_described_by"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:comment>Original = The data, with this value, was originally contained in the data import and originally attributed to the concerned object
+
+Aggregated = The data is the output of some sort of aggregating calculus, different values were originally attributed to points or parts in the data import
+
+Disaggregated = The data, with this value, was originally contained in the data import and attributed to a mereologically superior object, then attributed by cloning diffusion to its parts or its points</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://3DOntCore#Is_dynamically_originally_described_by -->
+
+    <owl:ObjectProperty rdf:about="http://3DOntCore#Is_dynamically_originally_described_by">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#Is_dynamically_described_by"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:comment>Original = The data, with this value, was originally contained in the data import and originally attributed to the concerned object
+
+Aggregated = The data is the output of some sort of aggregating calculus, different values were originally attributed to points or parts in the data import
+
+Disaggregated = The data, with this value, was originally contained in the data import and attributed to a mereologically superior object, then attributed by cloning diffusion to its parts or its points</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://3DOntCore#Is_part_of -->
+
+    <owl:ObjectProperty rdf:about="http://3DOntCore#Is_part_of">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Macro_Entity"/>
+        <rdfs:range rdf:resource="http://3DOntCore#Macro_Entity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://3DOntCore#Is_statically_aggregatively_described_by -->
+
+    <owl:ObjectProperty rdf:about="http://3DOntCore#Is_statically_aggregatively_described_by">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#Is_statically_described_by"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:comment>Original = The data, with this value, was originally contained in the data import and originally attributed to the concerned object
+
+Aggregated = The data is the output of some sort of aggregating calculus, different values were originally attributed to points or parts in the data import
+
+Disaggregated = The data, with this value, was originally contained in the data import and attributed to a mereologically superior object, then attributed by cloning diffusion to its parts or its points</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://3DOntCore#Is_statically_described_by -->
+
+    <owl:ObjectProperty rdf:about="http://3DOntCore#Is_statically_described_by">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#Is_described_by"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://3DOntCore#Is_statically_disaggregatively_described_by -->
+
+    <owl:ObjectProperty rdf:about="http://3DOntCore#Is_statically_disaggregatively_described_by">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#Is_statically_described_by"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:comment>Original = The data, with this value, was originally contained in the data import and originally attributed to the concerned object
+
+Aggregated = The data is the output of some sort of aggregating calculus, different values were originally attributed to points or parts in the data import
+
+Disaggregated = The data, with this value, was originally contained in the data import and attributed to a mereologically superior object, then attributed by cloning diffusion to its parts or its points</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://3DOntCore#Is_statically_originally_described_by -->
+
+    <owl:ObjectProperty rdf:about="http://3DOntCore#Is_statically_originally_described_by">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#Is_statically_described_by"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:comment>Original = The data, with this value, was originally contained in the data import and originally attributed to the concerned object
+
+Aggregated = The data is the output of some sort of aggregating calculus, different values were originally attributed to points or parts in the data import
+
+Disaggregated = The data, with this value, was originally contained in the data import and attributed to a mereologically superior object, then attributed by cloning diffusion to its parts or its points</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://3DOntCore#Acquisition_Tag -->
+
+    <owl:DatatypeProperty rdf:about="http://3DOntCore#Acquisition_Tag">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#Data_Import_Properties"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Raster_Acquisition"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Scalar_Field_Acquisition"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://3DOntCore#Acquisition_Time -->
+
+    <owl:DatatypeProperty rdf:about="http://3DOntCore#Acquisition_Time">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#Data_Import_Properties"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Data_Import"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://3DOntCore#Annotation_Author -->
+
+    <owl:DatatypeProperty rdf:about="http://3DOntCore#Annotation_Author">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#Data_Import_Properties"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Manual_Annotation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>this property will be substituted by an object relationship once the &quot;User&quot; class will be added.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://3DOntCore#B -->
+
+    <owl:DatatypeProperty rdf:about="http://3DOntCore#B">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#Colors"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Point"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://3DOntCore#Bounding_Box_Coordinates -->
+
+    <owl:DatatypeProperty rdf:about="http://3DOntCore#Bounding_Box_Coordinates">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#Macro_Entities_Geometric_Features"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Macro_Entity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://3DOntCore#CO2_Concentration -->
+
+    <owl:DatatypeProperty rdf:about="http://3DOntCore#CO2_Concentration">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#Measured_Properties"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Data_Import"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://3DOntCore#Colors -->
+
+    <owl:DatatypeProperty rdf:about="http://3DOntCore#Colors">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Point"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://3DOntCore#Data_Import_Properties -->
+
+    <owl:DatatypeProperty rdf:about="http://3DOntCore#Data_Import_Properties">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://3DOntCore#Dew_Formation_Risk_Index -->
+
+    <owl:DatatypeProperty rdf:about="http://3DOntCore#Dew_Formation_Risk_Index">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#High-Level_Features"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Point"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://3DOntCore#Dimensions -->
+
+    <owl:DatatypeProperty rdf:about="http://3DOntCore#Dimensions">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#Macro_Entities_Geometric_Features"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Macro_Entity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://3DOntCore#Electric_Conductivity -->
+
+    <owl:DatatypeProperty rdf:about="http://3DOntCore#Electric_Conductivity">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#Material_Properties"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Material"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#real"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://3DOntCore#Flooding_Risk_Index -->
+
+    <owl:DatatypeProperty rdf:about="http://3DOntCore#Flooding_Risk_Index">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#High-Level_Features"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Point"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://3DOntCore#G -->
+
+    <owl:DatatypeProperty rdf:about="http://3DOntCore#G">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#Colors"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Point"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://3DOntCore#Geometric_Features -->
+
+    <owl:DatatypeProperty rdf:about="http://3DOntCore#Geometric_Features">
+        <rdfs:domain rdf:resource="http://3DOntCore#3D_Entity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#real"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://3DOntCore#Heat_Conductivity -->
+
+    <owl:DatatypeProperty rdf:about="http://3DOntCore#Heat_Conductivity">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#Material_Properties"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Material"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#real"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://3DOntCore#Heating_Propension_Index -->
+
+    <owl:DatatypeProperty rdf:about="http://3DOntCore#Heating_Propension_Index">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#High-Level_Features"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Point"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://3DOntCore#High-Level_Features -->
+
+    <owl:DatatypeProperty rdf:about="http://3DOntCore#High-Level_Features">
+        <rdfs:domain rdf:resource="http://3DOntCore#3D_Entity"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://3DOntCore#Humidity -->
+
+    <owl:DatatypeProperty rdf:about="http://3DOntCore#Humidity">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#Measured_Properties"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Data_Import"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://3DOntCore#Illumination -->
+
+    <owl:DatatypeProperty rdf:about="http://3DOntCore#Illumination">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#Measured_Properties"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Data_Import"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://3DOntCore#Leaching_Risk_Index -->
+
+    <owl:DatatypeProperty rdf:about="http://3DOntCore#Leaching_Risk_Index">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#High-Level_Features"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Point"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://3DOntCore#Macro_Entities_Geometric_Features -->
+
+    <owl:DatatypeProperty rdf:about="http://3DOntCore#Macro_Entities_Geometric_Features">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#Geometric_Features"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Macro_Entity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://3DOntCore#Material_Properties -->
+
+    <owl:DatatypeProperty rdf:about="http://3DOntCore#Material_Properties">
+        <rdfs:domain rdf:resource="http://3DOntCore#Material"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#real"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://3DOntCore#Max_X -->
+
+    <owl:DatatypeProperty rdf:about="http://3DOntCore#Max_X">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#Bounding_Box_Coordinates"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Macro_Entity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://3DOntCore#Max_Y -->
+
+    <owl:DatatypeProperty rdf:about="http://3DOntCore#Max_Y">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#Bounding_Box_Coordinates"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Macro_Entity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://3DOntCore#Max_Z -->
+
+    <owl:DatatypeProperty rdf:about="http://3DOntCore#Max_Z">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#Bounding_Box_Coordinates"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Macro_Entity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://3DOntCore#Measured_Properties -->
+
+    <owl:DatatypeProperty rdf:about="http://3DOntCore#Measured_Properties">
+        <rdfs:domain rdf:resource="http://3DOntCore#Data_Import"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#real"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://3DOntCore#Min_X -->
+
+    <owl:DatatypeProperty rdf:about="http://3DOntCore#Min_X">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#Bounding_Box_Coordinates"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Macro_Entity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://3DOntCore#Min_Y -->
+
+    <owl:DatatypeProperty rdf:about="http://3DOntCore#Min_Y">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#Bounding_Box_Coordinates"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Macro_Entity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://3DOntCore#Min_Z -->
+
+    <owl:DatatypeProperty rdf:about="http://3DOntCore#Min_Z">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#Bounding_Box_Coordinates"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Macro_Entity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://3DOntCore#Particulate_Matter_Concentration -->
+
+    <owl:DatatypeProperty rdf:about="http://3DOntCore#Particulate_Matter_Concentration">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#Measured_Properties"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Data_Import"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://3DOntCore#Permeability_To_Water -->
+
+    <owl:DatatypeProperty rdf:about="http://3DOntCore#Permeability_To_Water">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#Material_Properties"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Material"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#real"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://3DOntCore#Ph -->
+
+    <owl:DatatypeProperty rdf:about="http://3DOntCore#Ph">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#Material_Properties"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Material"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#real"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://3DOntCore#Point_Coordinates -->
+
+    <owl:DatatypeProperty rdf:about="http://3DOntCore#Point_Coordinates">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#Points_Geometric_Features"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Point"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://3DOntCore#Points_Geometric_Features -->
+
+    <owl:DatatypeProperty rdf:about="http://3DOntCore#Points_Geometric_Features">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#Geometric_Features"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Point"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://3DOntCore#Porosity -->
+
+    <owl:DatatypeProperty rdf:about="http://3DOntCore#Porosity">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#Material_Properties"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Material"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#real"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://3DOntCore#R -->
+
+    <owl:DatatypeProperty rdf:about="http://3DOntCore#R">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#Colors"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Point"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://3DOntCore#Solubility -->
+
+    <owl:DatatypeProperty rdf:about="http://3DOntCore#Solubility">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#Material_Properties"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Material"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#real"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://3DOntCore#Specific_Heat_Capacity -->
+
+    <owl:DatatypeProperty rdf:about="http://3DOntCore#Specific_Heat_Capacity">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#Material_Properties"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Material"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#real"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://3DOntCore#Surface_Value -->
+
+    <owl:DatatypeProperty rdf:about="http://3DOntCore#Surface_Value">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#Macro_Entities_Geometric_Features"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Macro_Entity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://3DOntCore#Temperature -->
+
+    <owl:DatatypeProperty rdf:about="http://3DOntCore#Temperature">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#Measured_Properties"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Data_Import"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://3DOntCore#Verticality -->
+
+    <owl:DatatypeProperty rdf:about="http://3DOntCore#Verticality">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#Points_Geometric_Features"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Point"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://3DOntCore#X -->
+
+    <owl:DatatypeProperty rdf:about="http://3DOntCore#X">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#Point_Coordinates"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Point"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://3DOntCore#X_Length -->
+
+    <owl:DatatypeProperty rdf:about="http://3DOntCore#X_Length">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#Dimensions"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Macro_Entity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://3DOntCore#Y -->
+
+    <owl:DatatypeProperty rdf:about="http://3DOntCore#Y">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#Point_Coordinates"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Point"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://3DOntCore#Y_Length -->
+
+    <owl:DatatypeProperty rdf:about="http://3DOntCore#Y_Length">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#Dimensions"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Macro_Entity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://3DOntCore#Z -->
+
+    <owl:DatatypeProperty rdf:about="http://3DOntCore#Z">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#Point_Coordinates"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Point"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://3DOntCore#Z_Length -->
+
+    <owl:DatatypeProperty rdf:about="http://3DOntCore#Z_Length">
+        <rdfs:subPropertyOf rdf:resource="http://3DOntCore#Dimensions"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://3DOntCore#Macro_Entity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topDataProperty -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topDataProperty">
+        <rdfs:comment>There is no inference about data subproperty values. The use of subproperties is only intended to aid (i) code-side development and (ii) user-side displaying of data properties during ontology customization.
+To avoid redundancy and bad displaying, transitivity is not computed.</rdfs:comment>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://3DOntCore#Abacus -->
+
+    <owl:Class rdf:about="http://3DOntCore#Abacus">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Architectural_Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Agricultural_Building -->
+
+    <owl:Class rdf:about="http://3DOntCore#Agricultural_Building">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Agricultural_Surface -->
+
+    <owl:Class rdf:about="http://3DOntCore#Agricultural_Surface">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Flat_Surface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Airport_Terminal -->
+
+    <owl:Class rdf:about="http://3DOntCore#Airport_Terminal">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Transport_Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Altar -->
+
+    <owl:Class rdf:about="http://3DOntCore#Altar">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Sacred_Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Amphiteater_Element -->
+
+    <owl:Class rdf:about="http://3DOntCore#Amphiteater_Element">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Special_Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Apartment -->
+
+    <owl:Class rdf:about="http://3DOntCore#Apartment">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Residential_Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Arcade -->
+
+    <owl:Class rdf:about="http://3DOntCore#Arcade">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Architectural_Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Architectural_Element -->
+
+    <owl:Class rdf:about="http://3DOntCore#Architectural_Element">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Immovable_Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Architrave -->
+
+    <owl:Class rdf:about="http://3DOntCore#Architrave">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Architectural_Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Arena -->
+
+    <owl:Class rdf:about="http://3DOntCore#Arena">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Amphiteater_Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Arsenal -->
+
+    <owl:Class rdf:about="http://3DOntCore#Arsenal">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Military_Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Balcony -->
+
+    <owl:Class rdf:about="http://3DOntCore#Balcony">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Architectural_Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Bar -->
+
+    <owl:Class rdf:about="http://3DOntCore#Bar">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Commercial_Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Barn -->
+
+    <owl:Class rdf:about="http://3DOntCore#Barn">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Agricultural_Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Barracks -->
+
+    <owl:Class rdf:about="http://3DOntCore#Barracks">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Military_Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Bas-Relief -->
+
+    <owl:Class rdf:about="http://3DOntCore#Bas-Relief">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Decorative_Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Battlement -->
+
+    <owl:Class rdf:about="http://3DOntCore#Battlement">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Architectural_Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Bench -->
+
+    <owl:Class rdf:about="http://3DOntCore#Bench">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Urban_Furniture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Bicycle -->
+
+    <owl:Class rdf:about="http://3DOntCore#Bicycle">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Two-Wheeled_Vehicle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Blind_Arcade -->
+
+    <owl:Class rdf:about="http://3DOntCore#Blind_Arcade">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Architectural_Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Building -->
+
+    <owl:Class rdf:about="http://3DOntCore#Building">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Immovable_Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Bus -->
+
+    <owl:Class rdf:about="http://3DOntCore#Bus">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Four-Wheeled_Vehicle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Bus_Station -->
+
+    <owl:Class rdf:about="http://3DOntCore#Bus_Station">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Transport_Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Bush -->
+
+    <owl:Class rdf:about="http://3DOntCore#Bush">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Vegetation_Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Capital -->
+
+    <owl:Class rdf:about="http://3DOntCore#Capital">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Architectural_Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Car -->
+
+    <owl:Class rdf:about="http://3DOntCore#Car">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Four-Wheeled_Vehicle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Ceiling -->
+
+    <owl:Class rdf:about="http://3DOntCore#Ceiling">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Architectural_Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Chimney -->
+
+    <owl:Class rdf:about="http://3DOntCore#Chimney">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Architectural_Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Church -->
+
+    <owl:Class rdf:about="http://3DOntCore#Church">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Religious_Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Cliff_Face -->
+
+    <owl:Class rdf:about="http://3DOntCore#Cliff_Face">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Topographic_Surface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Clinic -->
+
+    <owl:Class rdf:about="http://3DOntCore#Clinic">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Healt_Care_Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Column -->
+
+    <owl:Class rdf:about="http://3DOntCore#Column">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Architectural_Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Column_Base -->
+
+    <owl:Class rdf:about="http://3DOntCore#Column_Base">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Architectural_Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Command_Center -->
+
+    <owl:Class rdf:about="http://3DOntCore#Command_Center">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Military_Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Commemorative_Monument -->
+
+    <owl:Class rdf:about="http://3DOntCore#Commemorative_Monument">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Special_Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Commercial_Building -->
+
+    <owl:Class rdf:about="http://3DOntCore#Commercial_Building">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Constructed_Surface -->
+
+    <owl:Class rdf:about="http://3DOntCore#Constructed_Surface">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Flat_Surface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Cornice -->
+
+    <owl:Class rdf:about="http://3DOntCore#Cornice">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Architectural_Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Courthouse -->
+
+    <owl:Class rdf:about="http://3DOntCore#Courthouse">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Government_Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Crenel -->
+
+    <owl:Class rdf:about="http://3DOntCore#Crenel">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Architectural_Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Crepidoma -->
+
+    <owl:Class rdf:about="http://3DOntCore#Crepidoma">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Architectural_Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Cultural_Building -->
+
+    <owl:Class rdf:about="http://3DOntCore#Cultural_Building">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Data_Import -->
+
+    <owl:Class rdf:about="http://3DOntCore#Data_Import"/>
+    
+
+
+    <!-- http://3DOntCore#Decorative_Element -->
+
+    <owl:Class rdf:about="http://3DOntCore#Decorative_Element">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Immovable_Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Door -->
+
+    <owl:Class rdf:about="http://3DOntCore#Door">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Functional_Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Dormitory -->
+
+    <owl:Class rdf:about="http://3DOntCore#Dormitory">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Residential_Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Dynamic_Import -->
+
+    <owl:Class rdf:about="http://3DOntCore#Dynamic_Import">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Data_Import"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Echinus -->
+
+    <owl:Class rdf:about="http://3DOntCore#Echinus">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Architectural_Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Educational_Building -->
+
+    <owl:Class rdf:about="http://3DOntCore#Educational_Building">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Electrical_Substation -->
+
+    <owl:Class rdf:about="http://3DOntCore#Electrical_Substation">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Utility_Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Environmental_Element -->
+
+    <owl:Class rdf:about="http://3DOntCore#Environmental_Element">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Immovable_Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Facade -->
+
+    <owl:Class rdf:about="http://3DOntCore#Facade">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Architectural_Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Factory -->
+
+    <owl:Class rdf:about="http://3DOntCore#Factory">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Industrial_Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Fence -->
+
+    <owl:Class rdf:about="http://3DOntCore#Fence">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Urban_Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Flat_Surface -->
+
+    <owl:Class rdf:about="http://3DOntCore#Flat_Surface">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Macro_Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Flooring -->
+
+    <owl:Class rdf:about="http://3DOntCore#Flooring">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Architectural_Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Forest_Floor_Surface -->
+
+    <owl:Class rdf:about="http://3DOntCore#Forest_Floor_Surface">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Vegetated_Surface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Foundation -->
+
+    <owl:Class rdf:about="http://3DOntCore#Foundation">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Architectural_Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Four-Wheeled_Vehicle -->
+
+    <owl:Class rdf:about="http://3DOntCore#Four-Wheeled_Vehicle">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Vehicle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Fresco -->
+
+    <owl:Class rdf:about="http://3DOntCore#Fresco">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Decorative_Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Frize -->
+
+    <owl:Class rdf:about="http://3DOntCore#Frize">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Architectural_Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Functional_Element -->
+
+    <owl:Class rdf:about="http://3DOntCore#Functional_Element">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Architectural_Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Funerary_Elements -->
+
+    <owl:Class rdf:about="http://3DOntCore#Funerary_Elements">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Special_Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Funerary_Stele -->
+
+    <owl:Class rdf:about="http://3DOntCore#Funerary_Stele">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Funerary_Elements"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Gallery -->
+
+    <owl:Class rdf:about="http://3DOntCore#Gallery">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Cultural_Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Garbage_Can -->
+
+    <owl:Class rdf:about="http://3DOntCore#Garbage_Can">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Urban_Furniture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Government_Building -->
+
+    <owl:Class rdf:about="http://3DOntCore#Government_Building">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Grassland_Surface -->
+
+    <owl:Class rdf:about="http://3DOntCore#Grassland_Surface">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Vegetated_Surface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Greenhouse -->
+
+    <owl:Class rdf:about="http://3DOntCore#Greenhouse">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Agricultural_Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Ground_Surface -->
+
+    <owl:Class rdf:about="http://3DOntCore#Ground_Surface">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Topographic_Surface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Healt_Care_Building -->
+
+    <owl:Class rdf:about="http://3DOntCore#Healt_Care_Building">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Hilltop_Surface -->
+
+    <owl:Class rdf:about="http://3DOntCore#Hilltop_Surface">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Topographic_Surface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Hospital -->
+
+    <owl:Class rdf:about="http://3DOntCore#Hospital">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Healt_Care_Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Hotel -->
+
+    <owl:Class rdf:about="http://3DOntCore#Hotel">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Commercial_Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Hydrological_Surface -->
+
+    <owl:Class rdf:about="http://3DOntCore#Hydrological_Surface">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Flat_Surface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Ice_Surface -->
+
+    <owl:Class rdf:about="http://3DOntCore#Ice_Surface">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Hydrological_Surface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Immovable_Object -->
+
+    <owl:Class rdf:about="http://3DOntCore#Immovable_Object">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Industrial_Building -->
+
+    <owl:Class rdf:about="http://3DOntCore#Industrial_Building">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Lake_Surface -->
+
+    <owl:Class rdf:about="http://3DOntCore#Lake_Surface">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Water_Surface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Lamp -->
+
+    <owl:Class rdf:about="http://3DOntCore#Lamp">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Urban_Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Library -->
+
+    <owl:Class rdf:about="http://3DOntCore#Library">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Educational_Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Living_Being -->
+
+    <owl:Class rdf:about="http://3DOntCore#Living_Being">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Movable_Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Macro_Entity -->
+
+    <owl:Class rdf:about="http://3DOntCore#Macro_Entity">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#3D_Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Manual_Annotation -->
+
+    <owl:Class rdf:about="http://3DOntCore#Manual_Annotation">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Static_Import"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Material -->
+
+    <owl:Class rdf:about="http://3DOntCore#Material">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Predicate_For_Points"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Meadow_Surface -->
+
+    <owl:Class rdf:about="http://3DOntCore#Meadow_Surface">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Vegetated_Surface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Military_Building -->
+
+    <owl:Class rdf:about="http://3DOntCore#Military_Building">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Mosaic -->
+
+    <owl:Class rdf:about="http://3DOntCore#Mosaic">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Decorative_Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Mosque -->
+
+    <owl:Class rdf:about="http://3DOntCore#Mosque">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Religious_Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Motorcycle -->
+
+    <owl:Class rdf:about="http://3DOntCore#Motorcycle">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Two-Wheeled_Vehicle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Movable_Object -->
+
+    <owl:Class rdf:about="http://3DOntCore#Movable_Object">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Multi_Family_House -->
+
+    <owl:Class rdf:about="http://3DOntCore#Multi_Family_House">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Residential_Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Museum -->
+
+    <owl:Class rdf:about="http://3DOntCore#Museum">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Cultural_Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Object -->
+
+    <owl:Class rdf:about="http://3DOntCore#Object">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Macro_Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Ocean_Surface -->
+
+    <owl:Class rdf:about="http://3DOntCore#Ocean_Surface">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Water_Surface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Office -->
+
+    <owl:Class rdf:about="http://3DOntCore#Office">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Commercial_Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Orchard_Surface -->
+
+    <owl:Class rdf:about="http://3DOntCore#Orchard_Surface">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Agricultural_Surface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Parking_Garage -->
+
+    <owl:Class rdf:about="http://3DOntCore#Parking_Garage">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Transport_Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Person -->
+
+    <owl:Class rdf:about="http://3DOntCore#Person">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Living_Being"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Pet -->
+
+    <owl:Class rdf:about="http://3DOntCore#Pet">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Living_Being"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Pharmacy -->
+
+    <owl:Class rdf:about="http://3DOntCore#Pharmacy">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Healt_Care_Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Playground -->
+
+    <owl:Class rdf:about="http://3DOntCore#Playground">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Urban_Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Plowed_Field_Surface -->
+
+    <owl:Class rdf:about="http://3DOntCore#Plowed_Field_Surface">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Agricultural_Surface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Point -->
+
+    <owl:Class rdf:about="http://3DOntCore#Point">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#3D_Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Pole -->
+
+    <owl:Class rdf:about="http://3DOntCore#Pole">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Urban_Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Police_Station -->
+
+    <owl:Class rdf:about="http://3DOntCore#Police_Station">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Government_Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Power_Plant -->
+
+    <owl:Class rdf:about="http://3DOntCore#Power_Plant">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Industrial_Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Predicate -->
+
+    <owl:Class rdf:about="http://3DOntCore#Predicate"/>
+    
+
+
+    <!-- http://3DOntCore#Predicate_For_Macro_Entities -->
+
+    <owl:Class rdf:about="http://3DOntCore#Predicate_For_Macro_Entities">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Predicate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Predicate_For_Points -->
+
+    <owl:Class rdf:about="http://3DOntCore#Predicate_For_Points">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Predicate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Pumping_Station -->
+
+    <owl:Class rdf:about="http://3DOntCore#Pumping_Station">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Utility_Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Raster_Acquisition -->
+
+    <owl:Class rdf:about="http://3DOntCore#Raster_Acquisition">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Static_Import"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Religious_Building -->
+
+    <owl:Class rdf:about="http://3DOntCore#Religious_Building">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Residential_Building -->
+
+    <owl:Class rdf:about="http://3DOntCore#Residential_Building">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Restaurant -->
+
+    <owl:Class rdf:about="http://3DOntCore#Restaurant">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Commercial_Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#River_Surface -->
+
+    <owl:Class rdf:about="http://3DOntCore#River_Surface">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Water_Surface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Road_Surface -->
+
+    <owl:Class rdf:about="http://3DOntCore#Road_Surface">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Constructed_Surface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Rock -->
+
+    <owl:Class rdf:about="http://3DOntCore#Rock">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Environmental_Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Roof -->
+
+    <owl:Class rdf:about="http://3DOntCore#Roof">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Architectural_Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Sacred_Element -->
+
+    <owl:Class rdf:about="http://3DOntCore#Sacred_Element">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Special_Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Sarcophagus -->
+
+    <owl:Class rdf:about="http://3DOntCore#Sarcophagus">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Funerary_Elements"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Scalar_Field_Acquisition -->
+
+    <owl:Class rdf:about="http://3DOntCore#Scalar_Field_Acquisition">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Static_Import"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#School -->
+
+    <owl:Class rdf:about="http://3DOntCore#School">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Educational_Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Seating -->
+
+    <owl:Class rdf:about="http://3DOntCore#Seating">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Amphiteater_Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Sensor_Datastream -->
+
+    <owl:Class rdf:about="http://3DOntCore#Sensor_Datastream">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Dynamic_Import"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Shaft -->
+
+    <owl:Class rdf:about="http://3DOntCore#Shaft">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Architectural_Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Shop -->
+
+    <owl:Class rdf:about="http://3DOntCore#Shop">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Commercial_Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Shopping_Center -->
+
+    <owl:Class rdf:about="http://3DOntCore#Shopping_Center">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Commercial_Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Shrine -->
+
+    <owl:Class rdf:about="http://3DOntCore#Shrine">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Sacred_Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Single_Family_House -->
+
+    <owl:Class rdf:about="http://3DOntCore#Single_Family_House">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Residential_Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Slope_Surface -->
+
+    <owl:Class rdf:about="http://3DOntCore#Slope_Surface">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Topographic_Surface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Solar_Panel -->
+
+    <owl:Class rdf:about="http://3DOntCore#Solar_Panel">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Urban_Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Special_Element -->
+
+    <owl:Class rdf:about="http://3DOntCore#Special_Element">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Immovable_Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Stable -->
+
+    <owl:Class rdf:about="http://3DOntCore#Stable">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Agricultural_Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Stand -->
+
+    <owl:Class rdf:about="http://3DOntCore#Stand">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Amphiteater_Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Static_Import -->
+
+    <owl:Class rdf:about="http://3DOntCore#Static_Import">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Data_Import"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Statue -->
+
+    <owl:Class rdf:about="http://3DOntCore#Statue">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Decorative_Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Stone_Slab_Flooring -->
+
+    <owl:Class rdf:about="http://3DOntCore#Stone_Slab_Flooring">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Architectural_Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Street_Separator -->
+
+    <owl:Class rdf:about="http://3DOntCore#Street_Separator">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Urban_Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Stucco -->
+
+    <owl:Class rdf:about="http://3DOntCore#Stucco">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Decorative_Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Synagogue -->
+
+    <owl:Class rdf:about="http://3DOntCore#Synagogue">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Religious_Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Temple -->
+
+    <owl:Class rdf:about="http://3DOntCore#Temple">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Religious_Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Terrace_Surface -->
+
+    <owl:Class rdf:about="http://3DOntCore#Terrace_Surface">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Agricultural_Surface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Theater -->
+
+    <owl:Class rdf:about="http://3DOntCore#Theater">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Cultural_Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Tile_Flooring -->
+
+    <owl:Class rdf:about="http://3DOntCore#Tile_Flooring">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Architectural_Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Tomb -->
+
+    <owl:Class rdf:about="http://3DOntCore#Tomb">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Funerary_Elements"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Topographic_Surface -->
+
+    <owl:Class rdf:about="http://3DOntCore#Topographic_Surface">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Flat_Surface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Tower -->
+
+    <owl:Class rdf:about="http://3DOntCore#Tower">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Architectural_Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Town_Hall -->
+
+    <owl:Class rdf:about="http://3DOntCore#Town_Hall">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Government_Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Traffic_Signature -->
+
+    <owl:Class rdf:about="http://3DOntCore#Traffic_Signature">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Urban_Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Train_Station -->
+
+    <owl:Class rdf:about="http://3DOntCore#Train_Station">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Transport_Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Transport_Building -->
+
+    <owl:Class rdf:about="http://3DOntCore#Transport_Building">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Tree -->
+
+    <owl:Class rdf:about="http://3DOntCore#Tree">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Vegetation_Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Truck -->
+
+    <owl:Class rdf:about="http://3DOntCore#Truck">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Four-Wheeled_Vehicle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Two-Wheeled_Vehicle -->
+
+    <owl:Class rdf:about="http://3DOntCore#Two-Wheeled_Vehicle">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Vehicle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Tympani -->
+
+    <owl:Class rdf:about="http://3DOntCore#Tympani">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Architectural_Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Unclassified_Entity -->
+
+    <owl:Class rdf:about="http://3DOntCore#Unclassified_Entity">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Macro_Entity"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#University -->
+
+    <owl:Class rdf:about="http://3DOntCore#University">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Educational_Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Urban_Element -->
+
+    <owl:Class rdf:about="http://3DOntCore#Urban_Element">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Immovable_Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Urban_Furniture -->
+
+    <owl:Class rdf:about="http://3DOntCore#Urban_Furniture">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Movable_Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Utility_Building -->
+
+    <owl:Class rdf:about="http://3DOntCore#Utility_Building">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Van -->
+
+    <owl:Class rdf:about="http://3DOntCore#Van">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Four-Wheeled_Vehicle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Vegetated_Surface -->
+
+    <owl:Class rdf:about="http://3DOntCore#Vegetated_Surface">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Flat_Surface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Vegetation_Entity -->
+
+    <owl:Class rdf:about="http://3DOntCore#Vegetation_Entity">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Environmental_Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Vehicle -->
+
+    <owl:Class rdf:about="http://3DOntCore#Vehicle">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Movable_Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Wall -->
+
+    <owl:Class rdf:about="http://3DOntCore#Wall">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Architectural_Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Wall_Clock -->
+
+    <owl:Class rdf:about="http://3DOntCore#Wall_Clock">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Decorative_Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Warehouse -->
+
+    <owl:Class rdf:about="http://3DOntCore#Warehouse">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Industrial_Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Water_Surface -->
+
+    <owl:Class rdf:about="http://3DOntCore#Water_Surface">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Hydrological_Surface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Water_Treatment_Facility -->
+
+    <owl:Class rdf:about="http://3DOntCore#Water_Treatment_Facility">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Utility_Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Wetland_Surface -->
+
+    <owl:Class rdf:about="http://3DOntCore#Wetland_Surface">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Hydrological_Surface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Wild_Animal -->
+
+    <owl:Class rdf:about="http://3DOntCore#Wild_Animal">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Living_Being"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Window -->
+
+    <owl:Class rdf:about="http://3DOntCore#Window">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Functional_Element"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Window_Frame -->
+
+    <owl:Class rdf:about="http://3DOntCore#Window_Frame">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Architectural_Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#Work_Machine -->
+
+    <owl:Class rdf:about="http://3DOntCore#Work_Machine">
+        <rdfs:subClassOf rdf:resource="http://3DOntCore#Four-Wheeled_Vehicle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://3DOntCore#3D_Entity -->
+
+    <owl:Class rdf:about="http://3DOntCore#3D_Entity"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing">
+        <rdfs:comment>Currently covering:
+URBAN DOMAIN
+HERITAGE DOMAIN</rdfs:comment>
+        <rdfs:comment>a class &quot;User&quot; will be added, by leveraging foaf-defined attributes. it will be used to stored users of the 3D Graph, in order to attribute manual annotation without only relying on strings - as in the current version.</rdfs:comment>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+
